@@ -1,73 +1,74 @@
-# React + TypeScript + Vite
+# ⚔️ RPG Battle Game - React + Redux Toolkit + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Un mini jeu RPG au tour par tour développé avec **React**, **TypeScript** et **Redux Toolkit**, permettant d’affronter des ennemis, d’utiliser des compétences, des potions et de faire progresser son héros à travers un système d’expérience et de niveaux.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧩 Fonctionnalités principales
 
-## React Compiler
+- 👤 **Système de joueur complet** : HP, MP, Attaque, Défense, Niveau, EXP, Or, Potions  
+- 🧟 **Gestion des ennemis** : attaque, défense, récompenses EXP/Or  
+- ⚔️ **Combat au tour par tour** avec journal des actions (log)  
+- 🪄 **Utilisation de compétences spéciales** avec coût en MP  
+- 🧴 **Utilisation de potions** pour restaurer les HP  
+- 🏆 **Système de victoire / défaite** avec montée de niveau automatique  
+- 💾 **Gestion d’état globale** via Redux Toolkit  
+- 🎨 **Interface moderne** (React + TailwindCSS) avec icônes Lucide  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Stack Technique
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Technologie | Description |
+|--------------|-------------|
+| **React** | Framework UI pour construire l’interface du jeu |
+| **TypeScript** | Typage statique pour la sécurité du code |
+| **Redux Toolkit** | Gestion d’état globale simplifiée et puissante |
+| **React-Redux** | Intégration entre React et Redux |
+| **TailwindCSS** | Framework CSS utilitaire pour le design |
+| **Lucide-React** | Icônes vectorielles modernes |
+| **Vite** | Build tool ultra rapide pour React |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📸 Aperçu de l’application
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🏠 Écran du Menu principal
+<p align="center">
+  <img src="./public/capture0.png" width="600" alt="Menu Screen" />
+</p>
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### ⚔️ Écran du Combat
+<p align="center">
+  <img src="./public/capture1.png" width="600" alt="Battle Screen" />
+</p>
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📁 Structure du projet
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```bash
+src/
+│
+├─ store/
+│  ├─ slices/
+│  │  └─ gameSlice.ts        # Logique du jeu (reducers Redux)
+│  └─ store.ts               # Configuration du store Redux
+│
+├─ types/
+│  └─ gameTypes.ts           # Interfaces TypeScript : Player, Enemy, etc.
+│
+├─ constants/
+│  └─ data.ts                # Données statiques : ennemis, compétences...
+│
+├─ components/
+│  ├─ PlayerStats.tsx        # Affichage des stats du joueur
+│  ├─ EnemyStats.tsx         # Affichage des stats de l'ennemi
+│  ├─ BattleLog.tsx          # Journal des actions
+│  ├─ ActionButtons.tsx      # Boutons d’action du joueur
+│  └─ VictoireCard.tsx       # Victoire card
+│
+├─ screens/
+│  ├─ MenuScreen.tsx         # Menu principal
+│  └─ BattleScreen.tsx       # Écran de combat
+│  └─ GameScreen.tsx         # L’écran principal du jeu
+└─ App.tsx                   # Point d’entrée principal
+
