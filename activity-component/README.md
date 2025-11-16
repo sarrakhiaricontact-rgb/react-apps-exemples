@@ -67,10 +67,7 @@ les performances.
 ---
 
 ## 🎬 Démonstration vidéo
-
-<video src="./public/activitycomponent.mp4" controls width="600">
-  Votre navigateur ne supporte pas l’élément vidéo.
-</video>
+🎬 [Voir la démonstration vidéo](./public/activitycomponent.gif)
 
 ## 🏷️ Tags
 
