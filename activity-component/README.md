@@ -67,8 +67,7 @@ les performances.
 ---
 
 ## 🎬 Démonstration vidéo
-🎬 [Voir la démonstration vidéo](./public/activitycomponent.gif)
-
+![Démonstration vidéo](public/activitycomponent.gif)
 ## 🏷️ Tags
 
 `#React19` `#WebDev` `#Frontend` `#JavaScript` `#ReactJS` `#UXDesign`
